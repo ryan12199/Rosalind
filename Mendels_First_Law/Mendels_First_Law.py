@@ -4,8 +4,8 @@ def homozygous_prob(k: int, m: int, n: int) -> float:
     """
     Calculates the oddds of two random organisms from a population producing an offspring with a dominant allele for a certain gene when the population is composed of k organisms who are homozygous dominant, m organisms who are heterozygous and n organisms who are homozygous recessive
     
-    >>>2 2 2
-    0.783
+    >>> homozygous_prob(2, 2, 2)
+    0.7833333333333333
     
     """
     # if the first organism in the pair is homozygous dominant, the offspring will have a dominant allele
@@ -25,3 +25,7 @@ def homozygous_prob(k: int, m: int, n: int) -> float:
 
     # The total probability that the offspring has a dominant gene is equal to the sum of all the possible scenarios that lead to the offspring having a dominant gene
     return(prob_first_homo_dom + prob_first_hetero_dom + prob_second_homo_dom + prob_first_homo_rec_second_hetero_dom + prob_hetero_second_dom)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
